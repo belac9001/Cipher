@@ -1,18 +1,19 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class Main
 {
-    public static final String PUNCTUATION = ".,':";
+    public static final char[] ALPHABET = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    public static final String PUNCTUATION = ".,':!?";
+
     public static void main(String[] args)
     {
         Scanner reader = new Scanner(System.in);
         Map<Character, Integer> alphabetIndex = new HashMap<Character, Integer>();
-        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        for(int i = 0; i < alphabet.length; ++i)
-            alphabetIndex.put(alphabet[i], i);
+
+        for(int i = 0; i < ALPHABET.length; ++i)
+            alphabetIndex.put(ALPHABET[i], i);
 
         String input = "";
         while(!input.equals("exit"))
@@ -28,12 +29,12 @@ public class Main
             if(choice.equals("encode"))
             {
                 for(int i = 0; i < words.length; ++i)
-                    encodedSentence[i] = encode(alphabetIndex, alphabet, words[i]);
+                    encodedSentence[i] = encode(alphabetIndex, words[i]);
             }
             if(choice.equals("decode"))
             {
                 for(int i = 0; i < words.length; ++i)
-                    encodedSentence[i] = decode(alphabetIndex, alphabet, words[i]);
+                    encodedSentence[i] = decode(alphabetIndex, words[i]);
             }
 
             if(encodedSentence.length > 1)
@@ -51,7 +52,7 @@ public class Main
         }
     }
 
-    public static String encode(Map<Character, Integer> alphabetIndex, char[] alphabet, String word)
+    public static String encode(Map<Character, Integer> alphabetIndex, String word)
     {
         char[] wordCharacter = word.toCharArray();
         char[] encoded = new char[wordCharacter.length];
@@ -66,17 +67,17 @@ public class Main
             }
 
             int index = alphabetIndex.get(wordCharacter[i]) + shift;
-            if(index > 25)
+            while(index > 25)
                 index -= 26;
 
-            encoded[i] = alphabet[index];
+            encoded[i] = (wordCharacter[i] < 91 ? Character.toUpperCase(ALPHABET[index]) : ALPHABET[index]);
             shift++;
         }
 
         return String.valueOf(encoded);
     }
 
-    public static String decode(Map<Character, Integer> alphabetIndex, char[] alphabet, String word)
+    public static String decode(Map<Character, Integer> alphabetIndex, String word)
     {
         char[] wordCharacter = word.toCharArray();
         char[] encoded = new char[wordCharacter.length];
@@ -90,10 +91,11 @@ public class Main
                 continue;
             }
             int index = alphabetIndex.get(wordCharacter[i]) - shift;
-            if (index < 0)
+
+            while (index < 0)
                 index += 26;
 
-            encoded[i] = alphabet[index];
+            encoded[i] = ALPHABET[index];
             shift++;
         }
 
