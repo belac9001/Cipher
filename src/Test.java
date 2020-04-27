@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class Main
+public class Test
 {
+    public static final Cipher CIPHER = new Cipher();
 
     public static void main(String[] args)
     {
         Scanner reader = new Scanner(System.in);
-        Cipher cipher = new Cipher();
 
         String input = "";
         while(!input.equals("exit"))
@@ -22,12 +22,12 @@ public class Main
             if(choice.equals("encode"))
             {
                 for(int i = 0; i < words.length; ++i)
-                    encodedSentence[i] = cipher.encode(words[i]);
+                    encodedSentence[i] = CIPHER.encode(words[i]);
             }
             if(choice.equals("decode"))
             {
                 for(int i = 0; i < words.length; ++i)
-                    encodedSentence[i] = cipher.decode( words[i]);
+                    encodedSentence[i] = CIPHER.decode( words[i]);
             }
 
             if(encodedSentence.length > 1)
