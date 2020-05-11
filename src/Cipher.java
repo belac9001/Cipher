@@ -4,7 +4,7 @@ import java.util.Map;
 public class Cipher
 {
     private final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-    private final String PUNCTUATION = ".,':!?";
+    private final String SPECIAL_CHARACTERS = ".,':!?-\"0123456789"; // TODO: change variable name or separate numbers and punctuation
     private Map<Character, Integer> alphabetIndex;
 
     public Cipher()
@@ -23,7 +23,7 @@ public class Cipher
 
         for(int i = 0; i < word.length(); i++)
         {
-            if(PUNCTUATION.indexOf(word.charAt(i)) != -1) // if character is punctuation & not letter
+            if(SPECIAL_CHARACTERS.indexOf(word.charAt(i)) != -1) // if character is punctuation & not letter
             {
                 encoded[i] = word.charAt(i);
                 continue;
@@ -48,7 +48,7 @@ public class Cipher
 
         for(int i = 0; i < word.length(); i++)
         {
-            if(PUNCTUATION.indexOf(word.charAt(i)) != -1) // if character is punctuation & not letter
+            if(SPECIAL_CHARACTERS.indexOf(word.charAt(i)) != -1) // if character is punctuation & not letter
             {
                 encoded[i] = word.charAt(i);
                 continue;
