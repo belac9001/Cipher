@@ -15,31 +15,36 @@ public class Main
             input = reader.nextLine();
             System.out.print("Encode or decode? ");
             String choice = reader.nextLine();
+            System.out.print("Key: ");
+            int key = Integer.parseInt(reader.nextLine());
 
             String[] words = input.split("\\s+");
-            String[] encodedSentence = new String[words.length];
 
-            if(choice.equals("encode"))
+            while(key > 0)
             {
-                for(int i = 0; i < words.length; ++i)
-                    encodedSentence[i] = cipher.encode(words[i]);
-            }
-            if(choice.equals("decode"))
-            {
-                for(int i = 0; i < words.length; ++i)
-                    encodedSentence[i] = cipher.decode( words[i]);
+                if(choice.equals("encode"))
+                {
+                    for(int i = 0; i < words.length; ++i)
+                        words[i] = cipher.encode(words[i]);
+                }
+                if(choice.equals("decode"))
+                {
+                    for(int i = 0; i < words.length; ++i)
+                        words[i] = cipher.decode( words[i]);
+                }
+                key--;
             }
 
-            if(encodedSentence.length > 1)
+            if(words.length > 1)
             {
                 StringBuilder sentence = new StringBuilder();
-                for(String word : encodedSentence)
+                for(String word : words)
                     sentence.append(word + " ");
 
                 System.out.println(sentence.toString());
             }
             else
-                System.out.println(encodedSentence[0]);
+                System.out.println(words[0]);
         }
     }
 }
