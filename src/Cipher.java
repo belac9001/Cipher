@@ -4,7 +4,7 @@ import java.util.Map;
 public class Cipher
 {
     private final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-    private final String SPECIAL_CHARACTERS = ".,':!?-\"0123456789"; // TODO: change variable name or separate numbers and punctuation
+    private final String SPECIAL_CHARACTERS = ".,':!?-\"0123456789"; 
     private Map<Character, Integer> alphabetIndex;
 
     public Cipher()
