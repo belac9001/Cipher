@@ -13,7 +13,7 @@ public class CipherLogger
 
     public void log(String input)
     {
-        file = new File("src\\main\\resources\\log.txt");
+        file = new File("src/main/resources/log.txt");
         FileWriter fr = null;
         BufferedWriter br = null;
         String inputNewLine = input + System.getProperty("line.separator");
