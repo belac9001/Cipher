@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<p>Enter message</p>
+    <form action="#" th:action="@{/cipher}" th:object="${message}" method="post">
+		<textarea th:field="*{content}"></textarea>
+        <p>
+		   <input type="submit" name="encrypt" value="Encrypt" /> 
+		   <input type="submit" name="decrypt" value="Decrypt" /> 
+		   <input type="reset" value="Reset" />
+		</p>
+		<p>
+    </form>
+</body>
+</html>
