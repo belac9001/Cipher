@@ -1,16 +1,11 @@
 package org.cipher.cipher.utility;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.*;
 
 public class CipherLogger
 {
-    Logger logger = LoggerFactory.getLogger(this.getClass());
     private File file;
-
-
+    
     public void log(String input)
     {
         file = new File("src/main/resources/log.txt");
