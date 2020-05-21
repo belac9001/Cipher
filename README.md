@@ -5,6 +5,8 @@ Word Cipher created for 404
 # Local Development
 Pretty straightforward, just clone repository and run server with ```mvn spring-boot:run```. 
 
+Be sure to create log.txt and change filepath in CipherLogger.java
+
 Requires Java 13+
 
 Linux Java Installation
