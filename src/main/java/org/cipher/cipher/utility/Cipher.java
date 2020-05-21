@@ -6,7 +6,7 @@ import java.util.Map;
 public class Cipher
 {
     private final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-    private final String SPECIAL_CHARACTERS = ".,':!?-\"0123456789";
+    private final String SPECIAL_CHARACTERS = ".,':!?-$%@#*()\"0123456789";
     private Map<Character, Integer> alphabetIndex;
 
     public Cipher()
