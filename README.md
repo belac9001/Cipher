@@ -3,7 +3,7 @@
 Word Cipher created for 404
 
 # Local Development
-Pretty straightforward, just clone repository and run server with ```mvn spring-boot:run```. 
+Pretty straightforward, just clone repository and run server with ```mvn spring-boot:run``` (```mvnw spring-boot:run``` for Windows). 
 
 Be sure to create log.txt in same directory as server
 
