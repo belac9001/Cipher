@@ -1,4 +1,4 @@
-package org.cipher.cipher.utility;
+package org.project.cipher.utility;
 
 import java.util.HashMap;
 import java.util.Map;

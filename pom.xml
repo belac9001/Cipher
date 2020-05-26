@@ -8,8 +8,8 @@
 		<version>2.3.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.cipher</groupId>
-	<artifactId>cipher</artifactId>
+	<groupId>org.project</groupId>
+	<artifactId>application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cipher</name>
 	<description>cipher for 404</description>

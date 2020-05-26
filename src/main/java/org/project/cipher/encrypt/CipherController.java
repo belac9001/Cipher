@@ -1,8 +1,8 @@
-package org.cipher.cipher.encrypt;
+package org.project.cipher.encrypt;
 
-import org.cipher.cipher.model.Message;
-import org.cipher.cipher.utility.Cipher;
-import org.cipher.cipher.utility.CipherLogger;
+import org.project.cipher.model.Message;
+import org.project.cipher.utility.Cipher;
+import org.project.cipher.utility.CipherLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package org.cipher.cipher.model;
+package org.project.cipher.model;
 
 public class Message
 {
