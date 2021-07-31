@@ -28,4 +28,16 @@ class CipherTest {
 	void do_EncodeLowercase() {
 		assertEquals("fpfvdva", cipher.encode("encrypt"));
 	}
+
+	@Test
+	@DisplayName("Encrypt uppercase text")
+	void do_DecodeUppercase() {
+		assertEquals("ENCRYPT", cipher.decode("FPFVDVA"));
+	}
+
+	@Test
+	@DisplayName("Encrypt lowercase text")
+	void do_DecodeLowercase() {
+		assertEquals("encrypt", cipher.decode("fpfvdva"));
+	}
 }
